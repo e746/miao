@@ -7,6 +7,18 @@
   <style type="text/css">
   p{color: red;}
   .boom{color: blue;}
+  button{
+    border-radius:50%;
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    background-color: blue;
+    color: #FF0000;
+  }
+  .supercolor{
+    color: orange;
+    background-color: yellow;
+  }
   </style>
 
 </head>
@@ -23,11 +35,19 @@ function hongbao()
 {
   $("p").html("红包");
 }
+
+function anohterColor(e)
+{
+$("button").not($(e)).addClass("supercolor");
+$(e).removeClass("supercolor");
+}
 </script>
   <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nesciunt dolorem placeat tenetur expedita, veritatis, quidem sed, sunt recusandae distinctio praesentium provident! Quia inventore, earum, ipsam eum et quis dolorum.</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio assumenda molestias, illo laudantium numquam delectus molestiae. Ipsam nostrum impedit, illo suscipit reprehenderit labore inventore amet perferendis quae! Numquam, mollitia, maxime.</p>
-  <button type="button" id="btn1" onclick="hongbao()">点击变红包</button>
-  <button type="button" id="btn2">点击变发财</button>
+  <div class="btn group">
+  <button type="button" id="btn1" onclick="hongbao();anohterColor(this)">点击变红包</button>
+  <button type="button" id="btn2" onclick="anohterColor(this)">点击变发财</button>
+  </div>
   <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero doloremque dignissimos doloribus aliquam officiis sunt quam earum pariatur voluptatibus reiciendis ad facilis modi in, laudantium iure consectetur deserunt maiores obcaecati?</div>
   <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur, quidem tempora ut amet, vero quasi libero nulla labore vel, inventore perspiciatis id assumenda rerum voluptates unde sint dolore recusandae.</section>
   <h1>Quae ratione sit nostrum doloremque voluptatum, dignissimos, fuga labore veritatis earum, non sint magni nisi iure totam distinctio laborum. Quas eaque cumque ab rem odio totam delectus quidem quae pariatur.</h1>
