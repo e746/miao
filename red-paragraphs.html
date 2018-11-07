@@ -35,10 +35,21 @@ function hongbao()
 {
   $("p").html("红包");
 }
-
+var kirakira;
 function anohterColor(e)
+{clearInterval(kirakira);
+  removeSuper(e);
+kirakira=setInterval(function(){kira($("button").not(e))},400);
+
+}
+
+function kira(e)
+{$(e).addClass("supercolor");
+  setTimeout(function(){removeSuper(e)},200);
+}
+
+function removeSuper(e)
 {
-$("button").not($(e)).addClass("supercolor");
 $(e).removeClass("supercolor");
 }
 </script>
