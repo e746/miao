@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
   <title>Document</title>
   <style type="text/css">
   p{color: red;}
+  .boom{color: blue;}
   </style>
+
 </head>
 <body>
+<script>
+$(document).ready(function() {
+  $("#btn2").click(
+    function(){
+      $("p").html("发财");
+    })
+  //$("h1").addClass("boom");
+});
+function hongbao()
+{
+  $("p").html("红包");
+}
+</script>
   <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus nesciunt dolorem placeat tenetur expedita, veritatis, quidem sed, sunt recusandae distinctio praesentium provident! Quia inventore, earum, ipsam eum et quis dolorum.</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio assumenda molestias, illo laudantium numquam delectus molestiae. Ipsam nostrum impedit, illo suscipit reprehenderit labore inventore amet perferendis quae! Numquam, mollitia, maxime.</p>
+  <button type="button" id="btn1" onclick="hongbao()">点击变红包</button>
+  <button type="button" id="btn2">点击变发财</button>
   <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero doloremque dignissimos doloribus aliquam officiis sunt quam earum pariatur voluptatibus reiciendis ad facilis modi in, laudantium iure consectetur deserunt maiores obcaecati?</div>
   <section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur, quidem tempora ut amet, vero quasi libero nulla labore vel, inventore perspiciatis id assumenda rerum voluptates unde sint dolore recusandae.</section>
   <h1>Quae ratione sit nostrum doloremque voluptatum, dignissimos, fuga labore veritatis earum, non sint magni nisi iure totam distinctio laborum. Quas eaque cumque ab rem odio totam delectus quidem quae pariatur.</h1>
