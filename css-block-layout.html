@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>块元素</title>
+  <style>
+  body{
+    margin: 0;
+  }
+  header{
+        background-color: black;
+        margin-bottom: 15px;
+  }
+  footer{
+    background-color: #ee82ee;
+    text-align: center;
+  }
+  p,.mbox,.link{
+    margin: 0 auto ;
+    width: 600px;
+
+
+
+  }
+  .headp{
+  color: white;
+  }
+.pdi{
+  width: 180px;
+  height: 40px;
+  box-sizing:border-box;
+  border-color: black;
+  border: 3px solid;
+margin:15px;
+  background-color: pink;
+  xtext-align: center;
+
+}
+.pdi:hover{
+  background-color: red;
+}
+.pdi:nth-child(-n+4) {
+margin-left: 0px;
+  
+}
+
+.pdi:nth-child(n+5) {
+margin-left: 210px;
+  
+}
+.pdi:nth-child(n+9) {
+margin-left: 420px;
+  
+}
+.pdi:nth-child(4n+5) {
+margin-top: -220px;
+  
+}
+.pdip{
+  margin: 6px 0 auto -213px;
+  box-sizing:border-box;
+  text-align: center;
+  position: relative;
+}
+li{
+  list-style-type: none;
+  border-bottom: 1px dotted;
+
+}
+.link{
+  overflow: hidden;
+}
+
+ul{
+  padding: 0;
+}
+</style>
+</head>
+<body ">
+  <header>
+    <p class="headp">hello world 请调整浏览器窗口大小查看效果</p>
+  </header>
+  <div class="content">
+<p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+  </div>
+  <div class="mbox">
+  <div class="pdi"><p class=pdip>宽180高40(包含边框)</p></div>
+  <div class="pdi"><p class=pdip>水平间隙30px</p></div>
+  <div class="pdi"><p class=pdip>垂直间隙15px</p></div>
+  <div class="pdi"><p class=pdip>边框宽度3px</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  <div class="pdi"><p class=pdip>产品</p></div>
+  </div>
+  <div class="link">
+  <ul>
+    <li>link</li>
+    <li>link</li>
+    <li>link</li>
+    <li>link</li>
+    <li>link</li>
+  </ul>
+  </div>
+  <footer>
+  <p>
+  ©版权所有
+<br>
+本页所有布局均使用块元素</p>
+  </footer>
+</body>
+</html>
