@@ -4,31 +4,34 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <style>
-  body{
-    min-width: 600px;
+  html,body{
     margin: 0;
-    box-sizing: border-box;
-    height: 1000px;
+    height: 100%;
+    font-size: 0;
   }
-  .box{
+body>*{
     height: 100%;
 display: inline-block;
-border:1px solid;
+border-right:1px solid;
+font-size: 16px;
+box-sizing: border-box;
 
   }
   .p1{
-    width: 10%;
-    min-width: 150px;
+
+    width: calc(30px + 10%);
+    xmin-width: 150px;
+    overflow: auto;
   }
   .p2{
-    width: auto;
+    width: calc(70% - 90px);
   }
   </style>
 </head>
 <body>
   <div class="p1 box"></div>
   <div class="p2 box"></div>
-  <div class="p1 box"></div>
+  <div class="p1 box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic natus saepe fuga doloremque veritatis consectetur ipsa minus necessitatibus ea itaque dicta nisi, voluptate similique maxime eligendi perspiciatis neque. Repudiandae nobis assumenda recusandae esse animi temporibus atque laboriosam expedita molestias, voluptate ipsum magni reiciendis magnam quam. Perferendis nobis obcaecati accusamus autem assumenda suscipit cupiditate, dolorem enim consequuntur voluptates voluptas quasi. Ut eos animi dolore, eius hic, quia.</div>
   <div class="p1 box"></div>
 </body>
 </html>
