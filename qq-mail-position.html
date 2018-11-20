@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>layout3</title>
+  <style>
+  html,body{
+    margin: 0;
+    height: 100%
+  }
+  header{
+    height: 100px;
+    background-color: red;
+    border-bottom: 1px solid;
+    box-sizing: border-box;
+  }
+  main{
+    height: calc(100% - 100px);
+    position: relative;
+  }
+  aside{
+width: 30%;
+height: 100%;
+background-color: green;
+  }
+  section{
+    width: 70%;
+    height: 100%;
+    background-color: purple;
+    position: absolute;
+    top:0;
+    right: 0;
+  }
+  </style>
+</head>
+<body>
+  <header></header>
+  <main>
+      <aside></aside>
+      <section></section>
+  </main>
+</body>
+</html>
