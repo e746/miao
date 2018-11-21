@@ -11,6 +11,7 @@
     position: absolute;
     left: 0;
     transition:0.5s ;
+    z-index: -1;
 
   }
 
@@ -20,27 +21,35 @@ position: relative;
 width: 960px;
 height: 544px;
 overflow: hidden;
+line-height: 120px;
 }
 input{
-  position: absolute;
+  display: inline-block;
   top:100px;
+
   transform: scale(1.5,1.5);
   z-index: 5;
+  background-color: red;
 }
-input:nth-of-type(2){
-  display: inline-block;
+/*input:nth-of-type(2){
+  display: inline;
   left: 20px;
 }
 input:nth-of-type(3){
-  display: inline-block;
+  display: inline;
   left: 40px;
 }
+input:nth-of-type(4){
+  display: inline;
+  left: 60px;
+}*/
+
 
 .thb input:not(:checked) + img:nth-of-type(1){
 left:-960px;
 transition:0.5s ;
 visibility:hidden;
-z-index: -1;
+z-index: -2;
 }
 /* 没被选中的选择框里紧跟着的第二个元素
 */
@@ -48,23 +57,34 @@ z-index: -1;
 left:-960px;
 transition:0.5s;
 visibility:hidden;
-z-index: -1;
+z-index: -2;
 }
 /*当对应第二个图片的input前面的input被选择时，图片默认在右边
 */
-.thb input:nth-child(-n+1):checked ~ img:nth-of-type(2){
+.thb input:nth-of-type(-n+1):checked ~ img:nth-of-type(2){
 left:960px!important;
 transition:0.5s;
 xvisibility:hidden;
-z-index: -1;
+z-index: -2;
 }
 .thb input:not(:checked) + img:nth-of-type(3){
+left:-960px;
+transition:0.5s;
+visibility:hidden;
+z-index: -2;
+}
+.thb input:nth-of-type(-n+2):checked ~ img:nth-of-type(3){
+left:960px!important;
+transition:0.5s;
+xvisibility:hidden;
+z-index: -2;
+}
+.thb input:not(:checked) + img:nth-of-type(4){
 left:960px;
 transition:0.5s;
 visibility:hidden;
-z-index: -1;
+z-index: -2;
 }
-
 
 
 
@@ -73,11 +93,14 @@ z-index: -1;
 <body>
   <div class="thb">
   <input type="radio"  name="thd" value="1" checked="">
-  <img src="https://utaware.soxpoi.com/assets/images/game11.jpg" alt="图片挂了">
+  <img src="utawarerumono/game1.jpg" alt="图片挂了">
   <input type="radio" name="thd" value="2">
-  <img src="https://utaware.soxpoi.com/assets/images/game12.jpg" alt="图片挂了">
+  <img src="utawarerumono/game2.jpg" alt="图片挂了">
   <input type="radio" name="thd" value="3">
-  <img src="https://utaware.soxpoi.com/assets/images/game13.jpg" alt="图片挂了">
+  <img src="utawarerumono/game3.jpg" alt="图片挂了">
+    <input type="radio" name="thd" value="4">
+  <img src="utawarerumono/game4.jpg" alt="图片挂了">
+
   </div>
 </body>
 </html>
