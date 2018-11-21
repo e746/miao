@@ -30,6 +30,7 @@ input{
   transform: scale(1.5,1.5);
   z-index: 5;
   background-color: red;
+  visibility: hidden;
 }
 /*input:nth-of-type(2){
   display: inline;
@@ -141,9 +142,45 @@ visibility:hidden;
   top:25px;
   right: 13px;
  }
-
-
-
+.skipbuttom{
+  margin: 5px;
+  display:inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.8);
+  vertical-align: middle;
+}
+.buttombox{
+position: absolute;
+line-height: 50px;
+top:0;
+left: 20px;
+}
+.thb input:nth-of-type(1):checked ~div >label:nth-child(1){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
+.thb input:nth-of-type(2):checked ~div >label:nth-child(2){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
+.thb input:nth-of-type(3):checked ~div >label:nth-child(3){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
+.thb input:nth-of-type(4):checked ~div >label:nth-child(4){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
 
 
   </style>
@@ -158,6 +195,12 @@ visibility:hidden;
   <img src="utawarerumono/game3.jpg" alt="图片挂了">
     <input type="radio" id="ip4" name="thd" value="4">
   <img src="utawarerumono/game4.jpg" alt="图片挂了">
+  <div class="buttombox">
+  <label for="ip1" class="skipbuttom"></label>
+  <label for="ip2" class="skipbuttom"></label>
+  <label for="ip3" class="skipbuttom"></label>
+  <label for="ip4" class="skipbuttom"></label>
+  </div>
 <label for="ip0" class="leftbutton" disable><div class="lefttri"></div></label>
 <label for="ip1" class="leftbutton"><div class="lefttri"></div></label>
 <label for="ip2" class="leftbutton"><div class="lefttri"></div></label>
