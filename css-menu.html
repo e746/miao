@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  body,html{
+    margin: 0;
+
+  }
+  .ful{
+    font-size: 0;
+    position: relative;
+    width: 250px;
+    height: 25px;
+
+  }
+  #switch{
+    display:none;
+  }
+.ful>div{font-size: 16px;
+display: inline-block;
+width:50px;
+height: 25px;
+border: 1px solid;
+text-align: center;
+vertical-align: top;
+box-sizing: border-box;
+position: relative;
+  }
+li{
+xbox-sizing: border-box;
+text-align: left;
+width: auto;
+vertical-align: top;
+position: relative;
+line-height:25px;
+border-bottom: 1px solid;
+padding-right: 20px;
+
+}
+li:last-child{
+  border-bottom: 0;
+}
+.ful div{
+  position: relative;
+}
+.ful div:hover{
+  background-color: red;
+}
+ul{
+padding: 0;
+  list-style: none;
+position: absolute;
+border: 1px solid;
+margin: 0;
+  visibility: hidden;
+}
+div>ul{
+  top: 100%;
+  left: -1px;
+
+}
+ul li ul{
+  top:-1px;
+  left: 100%;
+  display: inline-block;
+
+}
+ul li ul:before{
+  content:">";
+  position: absolute;
+  left: -12px;
+
+}
+#switch:checked + div div:hover>ul,#switch:checked  + div li:hover>ul{
+  visibility: visible;
+  z-index: 2;
+}
+label{
+position: absolute;
+width: 100%;
+height:100%;
+left: 0;
+top: 0;
+z-index: 2;
+}
+#switch:checked + div div:hover>label{
+top:100%;
+left: -250px;
+width: 9999px;
+height: 9999px;
+z-index: 1;
+}
+.fb{
+  height: 700px;
+  overflow: hidden;
+}
+li:hover >ul>li > ul:before, #switch:checked + div div:hover >ul>li > ul:before{
+  visibility: visible;
+}
+
+
+  </style>
+
+</head>
+<body>
+  <div class="fb">
+      <div class="menu">
+      <input type="checkbox" id="switch" >
+      <div class="ful">
+        <div>文件
+            
+            <ul>
+                <li>555555555
+                    <ul>
+                        <li>222</li>
+                        <li>3
+                            <ul>
+                                <li>21</li>
+                                <li>222</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>3</li>
+            </ul>
+            <label for="switch"></label>
+        </div>
+        <div>编辑
+            <ul>
+                <li>555555555
+                    <ul>
+                        <li>222</li>
+                        <li>3
+                            <ul>
+                                <li>21</li>
+                                <li>222</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>3</li>
+            </ul>
+            <label for="switch"></label>
+        </div>
+        <div>选择
+            <ul>
+                <li>555555555
+                    <ul>
+                        <li>222</li>
+                        <li>3
+                            <ul>
+                                <li>21</li>
+                                <li>222</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>3</li>
+            </ul>
+            <label for="switch"></label>
+        </div>
+        <div>查看
+            <ul>
+                <li>555555555
+                    <ul>
+                        <li>222</li>
+                        <li>3
+                            <ul>
+                                <li>21</li>
+                                <li>222</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>3</li>
+            </ul>
+            <label for="switch"></label>
+        </div>
+        <div>查找
+            <ul>
+                <li>555555555
+                    <ul>
+                        <li>222</li>
+                        <li>3
+                            <ul>
+                                <li>21</li>
+                                <li>222</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>3</li>
+            </ul>
+            <label for="switch"></label>
+        </div>
+
+        
+      </div>
+      </div>
+  </div>
+</body>
+</html>
