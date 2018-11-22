@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Document</title>
   <style>
   html,body{
     margin: 0;
   }
-  img{
-    position: absolute;
-    left: 0;
-    transition:0.5s ;
-    z-index: -1;
-
-  }
-
-.thb{
+  .tha{
+  width: 960px;
+  height: 544px;
+  position: relative;
+  overflow: hidden;
+}
+.thab{
+  width: 400%;
+  height:100%;
   font-size: 0;
-position: relative;
-width: 960px;
-height: 544px;
-overflow: hidden;
-line-height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
 }
 input{
   display: inline-block;
@@ -31,84 +30,6 @@ input{
   z-index: 5;
   background-color: red;
   visibility: hidden;
-}
-/*input:nth-of-type(2){
-  display: inline;
-  left: 20px;
-}
-input:nth-of-type(3){
-  display: inline;
-  left: 40px;
-}
-input:nth-of-type(4){
-  display: inline;
-  left: 60px;
-}*/
-
-
-.thb input:not(:checked) + img:nth-of-type(1){
-left:-960px;
-transition:0.5s ;
-z-index: -2;
-}
-/* 没被选中的选择框里紧跟着的第二个元素
-*/
-.thb input:not(:checked) + img:nth-of-type(2){
-left:-960px;
-transition:0.5s;
-z-index: -2;
-}
-/*当对应第二个图片的input前面的input被选择时，图片默认在右边
-*/
-.thb input:nth-of-type(-n+1):checked ~ img:nth-of-type(2){
-left:960px!important;
-transition:0.5s;
-z-index: -2;
-}
-.thb input:not(:checked) + img:nth-of-type(3){
-left:-960px;
-transition:0.5s;
-z-index: -2;
-}
-.thb input:nth-of-type(-n+2):checked ~ img:nth-of-type(3){
-left:960px!important;
-transition:0.5s;
-z-index: -2;
-}
-.thb input:not(:checked) + img:nth-of-type(4){
-left:960px;
-transition:0.5s;
-z-index: -2;
-}
-.leftbutton
-{display: inline-block;
-  height: 100px;
-  width: 60px;
-  background-color: rgba(255,255,255,0.3);
-  position: absolute;
-  top:222px;
-  left: 20px;
-}
-.rightbutton
-{display: inline-block;
-  height: 100px;
-  width: 60px;
-  background-color: rgba(255,255,255,0.3);
-   position: absolute;
-  top:222px;
-  left: 880px;
-}
-.thb input:nth-of-type(1):checked ~ label:not(:nth-of-type(4n+1)){
-visibility:hidden;
-}
-.thb input:nth-of-type(2):checked ~ label:not(:nth-of-type(4n+2)){
-visibility:hidden;
-}
-.thb input:nth-of-type(3):checked ~ label:not(:nth-of-type(4n+3)){
-visibility:hidden;
-}
-.thb input:nth-of-type(4):checked ~ label:not(:nth-of-type(4n+4)){
-visibility:hidden;
 }
  .lefttri{
   width: 30px;
@@ -151,58 +72,102 @@ line-height: 50px;
 top:0;
 left: 20px;
 }
-.thb input:nth-of-type(1):checked ~div >label:nth-child(1){
-  width: 17px;
-  height: 17px;
-  margin: 3px;
-  background-color: rgba(125,255,255,0.8);
-}
-.thb input:nth-of-type(2):checked ~div >label:nth-child(2){
-  width: 17px;
-  height: 17px;
-  margin: 3px;
-  background-color: rgba(125,255,255,0.8);
-}
-.thb input:nth-of-type(3):checked ~div >label:nth-child(3){
-  width: 17px;
-  height: 17px;
-  margin: 3px;
-  background-color: rgba(125,255,255,0.8);
-}
-.thb input:nth-of-type(4):checked ~div >label:nth-child(4){
-  width: 17px;
-  height: 17px;
-  margin: 3px;
-  background-color: rgba(125,255,255,0.8);
-}
 
-
+.leftbutton
+{display: inline-block;
+  height: 100px;
+  width: 60px;
+  background-color: rgba(255,255,255,0.3);
+  position: absolute;
+  top:222px;
+  left: 20px;
+}
+.rightbutton
+{display: inline-block;
+  height: 100px;
+  width: 60px;
+  background-color: rgba(255,255,255,0.3);
+   position: absolute;
+  top:222px;
+  left: 880px;
+}
+.tha input:nth-of-type(1):checked ~ label:not(:nth-of-type(4n+1)){
+visibility:hidden;
+}
+.tha input:nth-of-type(2):checked ~ label:not(:nth-of-type(4n+2)){
+visibility:hidden;
+}
+.tha input:nth-of-type(3):checked ~ label:not(:nth-of-type(4n+3)){
+visibility:hidden;
+}
+.tha input:nth-of-type(4):checked ~ label:not(:nth-of-type(4n+4)){
+visibility:hidden;
+}
+.tha input:nth-of-type(2):checked ~ .thab{
+  left: -960px;
+  transition: 0.5s;
+}
+.tha input:nth-of-type(3):checked ~ .thab{
+  left: -1920px;
+  transition: 0.5s;
+}
+.tha input:nth-of-type(4):checked ~ .thab{
+  left: -2880px;
+  transition: 0.5s;
+}
+.tha input:nth-of-type(1):checked ~div >label:nth-child(1){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
+.tha input:nth-of-type(2):checked ~div >label:nth-child(2){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
+.tha input:nth-of-type(3):checked ~div >label:nth-child(3){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
+.tha input:nth-of-type(4):checked ~div >label:nth-child(4){
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  background-color: rgba(125,255,255,0.8);
+}
   </style>
+
 </head>
 <body>
-  <div class="thb">
-  <input type="radio" id="ip1" name="thd" value="1" checked="">
-  <img src="utawarerumono/game1.jpg" alt="图片挂了">
-  <input type="radio" id="ip2" name="thd" value="2">
-  <img src="utawarerumono/game2.jpg" alt="图片挂了">
-  <input type="radio" id="ip3" name="thd" value="3">
-  <img src="utawarerumono/game3.jpg" alt="图片挂了">
-    <input type="radio" id="ip4" name="thd" value="4">
-  <img src="utawarerumono/game4.jpg" alt="图片挂了">
-  <div class="buttombox">
-  <label for="ip1" class="skipbuttom"></label>
-  <label for="ip2" class="skipbuttom"></label>
-  <label for="ip3" class="skipbuttom"></label>
-  <label for="ip4" class="skipbuttom"></label>
-  </div>
-<label for="ip0" class="leftbutton" disable><div class="lefttri"></div></label>
-<label for="ip1" class="leftbutton"><div class="lefttri"></div></label>
-<label for="ip2" class="leftbutton"><div class="lefttri"></div></label>
-<label for="ip3" class="leftbutton"><div class="lefttri"></div></label>
-<label for="ip2" class="rightbutton"><div class="righttri"></div></label>
-<label for="ip3" class="rightbutton"><div class="righttri"></div></label>
-<label for="ip4" class="rightbutton"><div class="righttri"></div></label>
-<label for="ip0" class="rightbutton" disable><div class="righttri"></div></label>
-  </div>
+    <div class="tha">
+        <input type="radio" id="ip1" name="thd" value="1" checked="">
+        <input type="radio" id="ip2" name="thd" value="2">
+        <input type="radio" id="ip3" name="thd" value="3">
+        <input type="radio" id="ip4" name="thd" value="4">
+        <div class="thab">
+             <img src="utawarerumono/game1.jpg" alt="图片挂了">
+             <img src="utawarerumono/game2.jpg" alt="图片挂了">
+             <img src="utawarerumono/game3.jpg" alt="图片挂了">
+             <img src="utawarerumono/game4.jpg" alt="图片挂了">
+        </div>
+        <div class="buttombox">
+            <label for="ip1" class="skipbuttom"></label>
+            <label for="ip2" class="skipbuttom"></label>
+            <label for="ip3" class="skipbuttom"></label>
+            <label for="ip4" class="skipbuttom"></label>
+        </div>
+        <label for="ip0" class="leftbutton" disable><div class="lefttri"></div></label>
+        <label for="ip1" class="leftbutton"><div class="lefttri"></div></label>
+        <label for="ip2" class="leftbutton"><div class="lefttri"></div></label>
+        <label for="ip3" class="leftbutton"><div class="lefttri"></div></label>
+        <label for="ip2" class="rightbutton"><div class="righttri"></div></label>
+        <label for="ip3" class="rightbutton"><div class="righttri"></div></label>
+        <label for="ip4" class="rightbutton"><div class="righttri"></div></label>
+        <label for="ip0" class="rightbutton" disable><div class="righttri"></div></label>
+    </div>
 </body>
 </html>
