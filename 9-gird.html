@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  main{
+    width: 170px;
+    height: 170px;
+    background-color: blue;
+    font-size: 0;
+overflow: hidden;
+  }
+  div{
+  font-size: 16px;
+  }
+
+  .fl{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-color: white;
+    margin: 5px 0 0 5px;
+    position: relative;
+  }
+  .fl:hover:before{
+    width: 50px;
+height: 50px;
+content: "";
+position: absolute;
+border: 5px solid red;
+z-index: 1;
+top: -5px;
+left: -5px;
+  }  /*  伪元素实现由于层级问题不能点击  */
+
+.fl2{
+      width: 50px;
+    height: 50px;
+        background-color: white;
+        display: inline-block;
+        vertical-align: top;
+        margin: 5px 0 0 5px;
+}
+.fl2:hover{
+  box-shadow: 0 0 0 5px red;
+}
+.fl3{
+  width: 50px;
+    height: 50px;
+  background-color: white;
+  float: left;
+ margin: 5px 0 0 5px;
+}
+.fl3>div{
+width: 50px;
+height: 50px;
+margin: 0;
+xbackground-color: red;
+box-sizing: border-box;
+}
+.fl3:hover>div{
+margin: -5px;
+border: 5px solid red;
+width: 60px;
+height: 60px;
+
+}
+.fl4{
+  width: 50px;
+    height: 50px;
+  background-color: white;
+ margin: 5px 0 0 5px;
+}
+.fl4:nth-child(n+4){
+  margin-left: 60px;
+}
+.fl4:nth-child(n+7){
+  margin-left: 115px;
+}
+.fl4:nth-child(3n+4){
+  margin-top:-160px;
+}
+.fl4:nth-child(-n+3):hover{
+  border: 5px solid;
+  margin: 0;
+}
+.fl4:nth-child(-n+2):hover + .fl4{
+  margin-top:0px;
+}
+table{
+   border-collapse: collapse;
+
+}
+tr{
+  border:5px solid blue;
+
+}
+td{width:50px;
+  height: 50px;
+xborder-width: 5px 4px 4px 5px;
+
+  padding: 0;
+}
+col{
+  border:5px solid blue;
+}
+td:hover{border:5px solid red;
+
+
+}  
+
+xtd:nth-child(1){
+  border-right:0;
+}
+
+0
+
+  </style>
+
+
+</head>
+<body>
+  <div><p>阴影</p>
+        <main>
+          <div class="fl2"><a href="www.baidu.com">111</a></div>
+          <div class="fl2"></div>
+          <div class="fl2"></div>
+          <div class="fl2"></div>
+          <div class="fl2"></div>
+          <div class="fl2"></div>
+          <div class="fl2"></div>
+          <div class="fl2"></div>
+          <div class="fl2"></div>
+      </main>
+      <p>盒内盒负margin</p>
+              <main>
+          <div class="fl3"><div><a href="www.baidu.com">111</a></div></div>
+          <div class="fl3"><div></div></div>
+          <div class="fl3"><div></div></div>
+          <div class="fl3"><div></div></div>
+          <div class="fl3"><div></div></div>
+          <div class="fl3"><div></div></div>
+          <div class="fl3"><div></div></div>
+          <div class="fl3"><div></div></div>
+          <div class="fl3"><div></div></div>
+      </main>
+      <hr>
+  <p>伪元素实现由于层级问题覆盖不能点击内容</p>
+      <main>
+          <div class="fl"><a href="www.baidu.com">111</a></div>
+          <div class="fl"></div>
+          <div class="fl"></div>
+          <div class="fl"></div>
+          <div class="fl"></div>
+          <div class="fl"></div>
+          <div class="fl"></div>
+          <div class="fl"></div>
+          <div class="fl"></div>
+      </main>
+
+      <hr>
+      <p>尝试使用常规流负margin布局时border取代原margin，理论上可以，但是需每列单独计算</p>
+       <main>
+          <div class="fl4"><a href="www.baidu.com">111</a></div>
+          <div class="fl4"></div>
+          <div class="fl4"></div>
+          <div class="fl4"></div>
+          <div class="fl4"></div>
+          <div class="fl4"></div>
+          <div class="fl4"></div>
+          <div class="fl4"></div>
+          <div class="fl4"></div>
+      </main>
+      <hr>
+      <p>相对定位肯定能做，但是要每个单独设置</p>
+      <hr>
+      <table>
+        <col>
+        <col>
+        <col>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+      </table>
+  </div>
+</body>
+</html>

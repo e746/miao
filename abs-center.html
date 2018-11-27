@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  div{
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    border: 1px solid;
+    
+
+  }
+
+.ic1{
+line-height: 100px; text-align: center;
+}
+.ic1 a{
+  display: inline-block;
+}
+.ic2 {
+  display: table;
+text-align: center;
+
+
+}
+.ic2 a{
+  display: table-cell;
+  vertical-align: middle;
+}
+.ic3{
+  position: relative;
+}
+.ic3 a{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.ic4{
+  position: relative;}
+
+.ic4 a{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+}
+.ic5{
+  text-align: center;
+}
+.ic5 a{
+display: inline-block;
+vertical-align: middle;
+width: 20px;
+height: 20px;
+}
+.ic5:after{
+    content:'';
+  width:0;
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
+
+}
+
+  </style>
+
+</head>
+<body>
+<div class="ic1"><a href="">11</a></div>
+<div class="ic2"><a href="">22</a></div>
+<div class="ic3"><a href="">33</a></div>
+<div class="ic4"><a href="">44</a></div>
+<div class="ic5"><a href="">55</a></div>
+</body>
+</html>
