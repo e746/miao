@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  div div{
+    background-color: red;
+    border:1px solid;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    box-sizing: border-box;
+
+  }
+  .box{
+    position: relative;
+transform-origin: center center -25px;
+transform-style:preserve-3d; 
+width: 150px;
+    height: 150px;
+    transition: transform 4s;
+  }
+  .box:hover{
+    transform: rotate3d(1,0,0,180deg) rotate3d(0,1,1,180deg);
+    transition: 4s;
+  }
+  .left{
+      top:50px;
+      left:0;
+      transform: rotate3d(0,1,0,-90deg);
+       transform-origin:100% 0;
+  }
+
+  .top{
+    top:0;
+    left: 50px;
+    transform: rotate3d(1,0,0,90deg);
+       transform-origin: 0 100%;
+  }
+
+
+  .before{
+    top: 50px;
+    left: 50px;
+        transform: rotate3d(0,0,0,0deg);
+       transform-origin: 0 0 50px;
+       xz-index: 1;
+  }
+
+    .after{
+    top: 50px;
+    left: 50px;
+            transform: rotate3d(0,0,0,0deg) translateZ(-50px);
+       transform-origin: 0 0 0px;
+  }
+    .left:hover{
+    
+  }
+  .bottom{
+    top:100px;
+    left: 50px;
+        transform: rotate3d(1,0,0,-90deg) translateZ(50px) translateY(-50px);
+       transform-origin: 0 -100%;
+  }
+    .left:hover{
+    
+  }
+    .right{
+    top:50px;
+    left: 100px;
+    transform: rotate3d(0,1,0,90deg) translateZ(50px) translateX(-50px);
+       transform-origin:-100% 0 ;
+  }
+    .left:hover{
+    
+  }
+  </style>
+</head>
+<body>
+<div class="box">
+      <div class="left">左</div>
+      <div class="top">上</div>
+      <div class="before">前</div>
+      <div class="after">后</div>
+      <div class="bottom">下</div>
+      <div class="right">右</div>
+  </div>
+</body>
+</html>

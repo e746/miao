@@ -1,0 +1,288 @@
+01.用文字描述如下选择器将选择哪些（个）元素
+    ```css  
+    div, h1 {}  所有div和h1标签
+    div[class] [id="abc"] {}  带class属性以及id为"abc"的div
+    div:hover ul li > div {}  div被hover的时候子孙元素里的ul的子孙元素里的li的div子元素
+    body :active {  /body的子孙元素被点击时
+    div:hover::after {}  div被hover时的after伪元素
+    ::selection {}  所有元素被选取时
+    :target {}  id被url指向的标签
+    input + ul + p ~ span {}   匹配有input，ul，p紧贴着时候，选中他们后面的兄弟元素span
+    ```
+
+    02. 分别写出如下几个选择器的优先级
+    ```//css
+    * * * {} 只比继承高
+    div * span {}   0002
+    div[title] {}  0011
+    fieldset legend + input {}  0003
+    #some #thing .not:hover .abc:hover {}   0240
+    ```
+
+03. https://www.example.com/a/b/ 页面中有如下代码
+    ```html
+    <link rel="stylesheet" href="//test.example.com/path/../the/../path/c.css">
+    ```
+
+    请问最终引入的c.css的完整路径是什么？
+    http://test.example.com/path/c.css
+
+04. `em,px,rem,vw,vh` 分别代表多长？
+em父级元素字体大小
+px一个像素
+rem根元素字体大小
+vh 100分之一的视口高度
+vw 100分之一的视口宽度
+
+05.显示器的物理分辨率为 `1920x1080`，操作系统设置的分辨率为 `1280x720`，网页的放大倍数为 `110%`，请计算一个 CSS 像素对应多少个显示器物理像素（面积与长度）？
+
+1.65长度，面积2.7225个
+
+06. 写出如下代码显示在浏览器后**每个单词**的字号
+Brown200px  quick24px 
+jumps24px over36px lazy54px dog36px
+sucks200px
+
+07. 字体的 italic 与 obsolete 的区别是？
+italic是字体文件里本身就有的斜体，没有的无效。
+obsolete是浏览器强行对正常体的文字强行倾斜。
+
+08. 写出满足如下条件的选择器
+    * 第  8个子结点之后，倒数第 5 个子结点之前的li结点
+    li:nth-child(9+n):not(nth-last-child(5+n))
+    * 【类名】以“damiao-”开头的元素
+    *[class^="damiao-"]
+    * rel 属性中有 nofollow 这个单词的标签
+    *[rel*="nofollow"]
+
+09. 链接伪类的几种状态书写的顺序是什么？为什么？
+focus hover active 因为后面的状态也会触发前面的状态，然后覆盖掉前面的样式。
+
+10.如下 font 属性的值哪一个是书写正确的？
+    * font: bold 24px/1.2 serif;
+
+11. vertical-align 取 middle 时元素如何对齐？
+将元素盒子的垂直中点与父盒子的baseline往上加上父盒子的x字母高度的一半位置对齐
+
+12. 什么是 baseline？
+基线 ，X字母下边缘对应的线
+规则1：inline-block元素，如果内部有line box，则inline-block元素的baseline就是最后一个作为内容存在的元素[inline box]的baseline，而这个元素的baseline的确定就要根据它自身来定了。
+规则2：inline-block元素，如果其内部没有line box或它的overflow属性不是visible，那么baseline将是这个inline-block元素的底margin边界。
+
+13. 详述你对盒模型的理解。
+布局上，子元素初始位置以及属性总是相对于父元素的
+命名意义上，子元素也总是跟父元素有关联
+
+14. 如何让一个元素可被 focus？如何去掉其被 focus 时的虚框？
+设置一个tabindex属性;outline:none;
+
+15. 如何给css添加注释
+/* */
+
+16. 指出如下css代码中的错误
+    ```
+    p,h1,{   选择器不能为逗号结尾
+        
+        background-color: rgba:(abc)  正确写法为rgba（a.b,c,x)
+        font-varient; abc;   font-variant属性名和属性值写错，另外要转换成小写字母应用text-transform
+        colr: #ff048;   color写错，#后只可以接3位或6位16进制数字
+        font: "serif" 25px; 字体和字体族写在最后面
+    }
+    ```
+17. 元素的高度写百分比在什么情况下【无效】，为什么？在什么情况下【有效】，有效时是以哪个元素的高度为基准值？
+父元素没有具体高度的时候无效。
+手动设置父元素高度或通过其他方法获得高度时。
+以父元素的包含块为基准
+
+18. 解释 box-sizing 可以取哪些值，以及每个值的意义
+content-box(默认),border-box,inherit
+设置为border-box时使边框不影响布局
+设置为content-box时使边框不影响内容区域（包含块）
+继承看具体案例了。。。
+
+19. 如下结构中，div 有两个伪元素，分别标出伪元素的位置，用 `<before></before>` 表示 `::before` 伪元素，用 `<after></after>` 表示 `::after` 伪元素
+    ```html
+    <div>
+      <before></before>
+      <h1>The article</h1>
+      <p>the quick brown fox</p>
+      <after></after>
+    </div>
+    ```
+20. 如何在伪元素中插入换行符？如何让这个换行符在页面中生效？
+用转义字符\000A实现，最好单独写到一个字符串里，防止与后续文本合并变成其他的转义字符
+
+21. 简述 ie7 市场份额比 ie6 低的原因并在网络上找出目前各大浏览器在中国和全球的市场份额
+1.盗版XP不会自动升级IE7
+2.政府机构必须支持正版，而他们以前买的正版是XP自带IE6，重新建站需要成本
+
+22. 页面有无 `doctype` 声明会有什么区别？
+不进行doctype声明的话，浏览器会按照自己的方式解析渲染页面，而不是按照W3C标准，从而导致在不同浏览器下渲染出的页面都不同。
+
+23. 有一张高为 100 宽为 50 的图片，内有一个直径为 40 的圆，其做为一个 200x200 的元素的背景图片，background-size 为 contain 和 cover 时，圆的直径分别为多少？
+contain 80 ;cover160;
+
+24.
+
+25。给出至少 5 种水平垂直居中方案。
+teble-cell+vertical-align
+设置line-height，伪元素基线对齐并撑起高度
+绝对定位calc（父元素50% -子元素50%）或定位50%后负margin
+绝对定位四方为0，margin自适应
+父元素flex容器，justify-content：center；align-items:center;
+
+26. 简述 em 框，内容区，行内框，行框的构成以及其需要注意的问题。
+字体框，包住字体或包括行内 非替换元素外边距以内的框，字体的行高或等于非替换元素的内容区，适应行内所有行内框的最小框就是行框。
+
+27. 如何确定一个行内框的baseline及其最高点和最低点？
+有内容的时候baseline根据内容的baseline，没有的话为下外边距的边界。
+
+
+28.`td` 元素的 `headers` 属性是干嘛的？
+关联TH元素，配合阅读器告诉视觉障碍者是属于哪一行的。
+
+29.color 这个属性有什么需要注意的地方？
+border，shadow，outline在不指定颜色的时候都是取color的值为颜色。
+
+30.如何理解 inline-block 元素？它有什么需要注意的地方？
+行内块元素，可以像块元素一样设定宽高和有包含块，也可以像行内元素一样水平排列。
+有内容的时候baseline根据内容的baseline，没有的话为下外边距的边界。
+
+31.什么是 CSS Sprite？为什么要使用 CSS Sprite？它有哪些优缺点？
+把所有小图片都集合到一张图片上，网站只需要下载一个文件就能表现出所有图标，提高性能。
+缺点：图片合成麻烦，设置图片时都要定位
+
+32. 找出如下代码中的错误
+    ```
+    <style>
+      div::after：hover {   伪元素只能在最后，应是div:hover::after{}
+        opacity: 85%； 只能取从0到1，应是0.85
+        transition: opactiy .3s step(5,end); 没有设置opacity初始值，不生效
+      }
+      a:visited {
+        font-size: 28px; 由于安全问题伪类不能改变字号
+      }
+    </style>
+    <div>
+      <a href="jd.com”>京东商场<a> 这样写的话会视为文件路径，应为//jd.com
+      <a href="mi.com”>小米网<a>
+    </div>
+    ```
+
+
+33 .15+1+（30-15）+30+1=62px行框高度。行高不变吧。只是撑大了
+
+34.将自己的baseline和父元素的baseline对齐。
+自己的baseline倒是会变化，子元素里面有内容时，以内容的基线作为自己的基线，没有的话以下外边距边界为基线。
+
+35.常规流就是默认编排方式，行内元素从左往右；块级元素从上往下不能在同一行（除了表格）。元素会受到包含块变化的直接影响。
+36.常规流中元素的包含块就是父元素的内容区。定位元素的包含块就是所相对的元素。某些属性的百分比是根据其包含块计算的。
+
+37.background-color背景颜色，可以设置颜色16进制数，可以rgba（）和rgb还有tarnsparent
+background-image:url()设置背景图片
+background-position:设置图片和内容框对齐的位置
+background-size 设置宽高，还有cover和contain2个值（2种填充方式）
+background-repeat 设置图片是否重复，可以设置repaet-x -y设置单方向重复
+background-attachment  设置图片不随着页面滚动，相对窗口静止，可以做视窗效果
+CSS3
+origin定位相对盒子定位，clip裁剪到哪个盒子
+background-blend-mode 混合模式
+
+38.扩展阴影半径spread写为负值能实现单边阴影（但是只能模糊阴影）
+
+39.默写与表格布局相关的 CSS 属性，并说明相关属性的作用
+border-collapse边框合并
+border-spacing边框间距
+empty-cells隐藏空单元格
+
+40.visibility:hidden隐藏保留位置
+display:none隐藏不保留位置
+opacity:0不隐藏，只是肉眼看不见
+
+41.
+
+42.因为每个人计算机的物理分辨率和系统分辨率都是不一样的，显示出来的长度也并不一定跟实际长度相等，这就可能会造成网页实际显示效果不如意。
+
+43. 表格布局中各层的层次是？
+table>(
+caption
+col>colgroup
+thead>tr>th
+tbody>tr>td
+tfoot>tr>td)
+
+44.
+
+45. 用 CSS 画出一个半圆形，分别给出实心与空心的的画法。实心和空心分别给出两种方案。
+ border-top-left-radius:9999px;
+  border-top-right-radius:9999px;
+
+46. :requierd :optional 选中是否设置required属性的表单元素
+:checked 选项被选中时
+:disabled 选择设置了对应属性的元素
+:valid :invalid输入数据格式正确与否时
+:read-only :read-write input 和 textarea 元素是否包含readonly属性时
+:in-range :out-of-range 输入数据是否符合区间时
+
+47. 如何禁用 textarea 元素默认的可缩放行为？
+ resize: none;
+
+48. reset与normalize分别是什么，区别是什么，何种场景会使用到？
+2者都是因为浏览器默认样式不同导致渲染效果有差异，开发者为了制作出的页面不受这些影响而想办法消除差异的造物。
+reset使用归0强制覆盖了大部分浏览器加上的样式.
+而normalize.css时通过观察各种常用浏览器的默认样式差异，纠正错误和常见的浏览器的不一致性，对许多在各种浏览器相同的样式进行了保护。
+
+49. 表布局中边框合并的原则是什么？
+有一方hidden时不显示任何边框，有一方是none时，以另一个为合并后边框
+不符合以上情况然后宽度大的优先，宽度相等时看border-style种类，再相同时看层级[td> tr > tbody > table]
+
+50. 如何让背景图片从元素的左下角向上偏移5像素，往右偏移3像素；图片不重复平铺？写出代码
+background-position:bottom 5px left 3px;
+background-repeat:no-repeat;
+
+51. 写出创建如下目录结果的命令行脚本（注：有扩展名的为文件，没有扩展名的为文件夹）。
+mkdir a a/foo a/foo/c a/bar a/bar/y
+cd a
+touch readme.md 
+cd bar
+touch a.txt b.txt 
+cd y
+touch a.js
+
+52. 中英互翻
+omit
+multiple多重
+驼峰式 Camel-Case
+中划线式kebab-Case
+layout 布局
+typo 错误
+code review 代码审查
+半径 radius 
+config 设置
+集合 set
+矩形 square
+binary 2进制
+decimal 10进制
+十六进制 Hexadecimal
+八进制 Octal
+SEO 搜索引擎优化
+HTML实体 转义字符
+语义化  semanticization
+兼容性
+quirk
+reference
+大小写敏感
+别名
+
+
+
+
+
+
+
+
+
+
+
+
+
