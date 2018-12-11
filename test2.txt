@@ -1,12 +1,12 @@
 01.用文字描述如下选择器将选择哪些（个）元素
     ```css  
     div, h1 {}  所有div和h1标签
-    div[class] [id="abc"] {}  带class属性以及id为"abc"的div
+    div[class] [id="abc"] {}  带class属性的div里的id为"abc"元素
     div:hover ul li > div {}  div被hover的时候子孙元素里的ul的子孙元素里的li的div子元素
     body :active {  /body的子孙元素被点击时
     div:hover::after {}  div被hover时的after伪元素
     ::selection {}  所有元素被选取时
-    :target {}  id被url指向的标签
+    :target {}  选中id的值为地址栏中#后面的部分的元素
     input + ul + p ~ span {}   匹配有input，ul，p紧贴着时候，选中他们后面的兄弟元素span
     ```
 
@@ -29,7 +29,7 @@
 
 04. `em,px,rem,vw,vh` 分别代表多长？
 em父级元素字体大小
-px一个像素
+px一个CSS像素
 rem根元素字体大小
 vh 100分之一的视口高度
 vw 100分之一的视口宽度
@@ -53,7 +53,7 @@ obsolete是浏览器强行对正常体的文字强行倾斜。
     * 【类名】以“damiao-”开头的元素
     *[class^="damiao-"]
     * rel 属性中有 nofollow 这个单词的标签
-    *[rel*="nofollow"]
+    *[rel~="nofollow"]
 
 09. 链接伪类的几种状态书写的顺序是什么？为什么？
 focus hover active 因为后面的状态也会触发前面的状态，然后覆盖掉前面的样式。
@@ -93,6 +93,7 @@ focus hover active 因为后面的状态也会触发前面的状态，然后覆�
 父元素没有具体高度的时候无效。
 手动设置父元素高度或通过其他方法获得高度时。
 以父元素的包含块为基准
+子元素定位的时候
 
 18. 解释 box-sizing 可以取哪些值，以及每个值的意义
 content-box(默认),border-box,inherit
@@ -150,7 +151,8 @@ border，shadow，outline在不指定颜色的时候都是取color的值为颜�
 
 31.什么是 CSS Sprite？为什么要使用 CSS Sprite？它有哪些优缺点？
 把所有小图片都集合到一张图片上，网站只需要下载一个文件就能表现出所有图标，提高性能。
-缺点：图片合成麻烦，设置图片时都要定位
+缺点：图片合成麻烦，设置图片时都要定位，不能是动图，放大后不清晰
+现代方案：字体图标 SVG图标（支持动画）
 
 32. 找出如下代码中的错误
     ```
@@ -164,8 +166,8 @@ border，shadow，outline在不指定颜色的时候都是取color的值为颜�
       }
     </style>
     <div>
-      <a href="jd.com”>京东商场<a> 这样写的话会视为文件路径，应为//jd.com
-      <a href="mi.com”>小米网<a>
+      <a href="jd.com”>京东商场<a> 这样写的话会视为文件路径，应为//jd.com  a标签闭合错误
+      <a href="mi.com”>小米网<a>  
     </div>
     ```
 
@@ -194,14 +196,19 @@ background-blend-mode 混合模式
 border-collapse边框合并
 border-spacing边框间距
 empty-cells隐藏空单元格
+display
+table-layout
+caption-side:top/bottom
 
 40.visibility:hidden隐藏保留位置
 display:none隐藏不保留位置
 opacity:0不隐藏，只是肉眼看不见
 
-41.
+41.<time datatime="ISO TIME STRING">昨天</time>time>
+常见于timeline形式的交互
 
 42.因为每个人计算机的物理分辨率和系统分辨率都是不一样的，显示出来的长度也并不一定跟实际长度相等，这就可能会造成网页实际显示效果不如意。
+不符合预期
 
 43. 表格布局中各层的层次是？
 table>(
@@ -211,7 +218,10 @@ thead>tr>th
 tbody>tr>td
 tfoot>tr>td)
 
-44.
+
+44.为什么要在文件的最后一行加一个回车？
+便于编辑
+文件拼接的时候会合并成一句
 
 45. 用 CSS 画出一个半圆形，分别给出实心与空心的的画法。实心和空心分别给出两种方案。
  border-top-left-radius:9999px;

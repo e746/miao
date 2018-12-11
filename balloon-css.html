@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style>
+html{
+  font-size: 12px;
+}
+button{
+  margin:50px;
+border:10px;
+}
+*[data-balloon]{
+  position: relative;
+  cursor: pointer;
+  outline-style: none;
+
+}
+*[data-balloon]:before{
+content: attr(data-balloon);
+transition:0.18s;
+background-color: rgba(0,0,0,0.7);
+color: white;
+height: 30px;
+padding: .5rem 1rem;
+box-sizing: border-box;
+width: auto;
+white-space: nowrap;
+border-radius: 4px;
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+*[data-balloon]:after{
+transition:0.18s;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+*[data-balloon]:hover:before,*[data-balloon]:hover:after,*[data-balloon][data-balloon-visible]:before,*[data-balloon][data-balloon-visible]:after{
+opacity: 1; 
+ pointer-events: auto;
+
+}
+
+*[data-balloon][data-balloon-pos="up"]:before{
+left: 50%;
+bottom: 0%;
+margin-bottom: 11px;
+transform:translate(-50%);
+}
+*[data-balloon][data-balloon-pos="up"]:after{
+  left: 50%;
+bottom: 0%;
+margin-bottom: 5px;
+transform:translate(-50%);
+border-width: 6px 6px 0 6px;
+border-color: rgba(0,0,0,0.7) transparent;
+}
+*[data-balloon][data-balloon-pos="up"]:hover:before,*[data-balloon][data-balloon-pos="up"]:hover:after,*[data-balloon][data-balloon-pos="up"][data-balloon-visible]:before,*[data-balloon][data-balloon-pos="up"][data-balloon-visible]:after{
+  bottom: 100%;
+
+}
+
+*[data-balloon][data-balloon-pos="down"]:before{
+left: 50%;
+top: 0%;
+margin-top: 11px;
+transform:translate(-50%);
+}
+*[data-balloon][data-balloon-pos="down"]:after{
+  left: 50%;
+top: 0%;
+margin-top: 5px;
+transform:translate(-50%);
+border-width: 0 6px 6px 6px;
+border-color: rgba(0,0,0,0.7) transparent;
+}
+*[data-balloon][data-balloon-pos="down"]:hover:before,*[data-balloon][data-balloon-pos="down"]:hover:after,*[data-balloon][data-balloon-pos="down"][data-balloon-visible]:before,*[data-balloon][data-balloon-pos="down"][data-balloon-visible]:after{
+  top: 100%;
+  
+}
+
+
+*[data-balloon][data-balloon-pos="left"]:before{
+right: 0%;
+bottom: 50%;
+margin-right: 11px;
+transform:translate(0,50%);
+
+}
+*[data-balloon][data-balloon-pos="left"]:after{
+right: 0%;
+bottom: 50%;
+margin-right: 5px;
+transform: translate(0,50%);
+border-width: 6px 0 6px 6px;
+border-color: transparent rgba(0,0,0,0.7);
+}
+*[data-balloon][data-balloon-pos="left"]:hover:before,*[data-balloon][data-balloon-pos="left"]:hover:after,*[data-balloon][data-balloon-pos="left"][data-balloon-visible]:before,*[data-balloon][data-balloon-pos="left"][data-balloon-visible]:after{
+  right: 100%;
+}
+
+*[data-balloon][data-balloon-pos="right"]:before{
+left: 0%;
+bottom: 50%;
+margin-left: 11px;
+transform:translate(0,50%);
+
+}
+*[data-balloon][data-balloon-pos="right"]:after{
+left: 0%;
+bottom: 50%;
+margin-left: 5px;
+transform: translate(0,50%);
+border-width: 6px 6px 6px 0;
+border-color: transparent rgba(0,0,0,0.7);
+}
+*[data-balloon][data-balloon-pos="right"]:hover:before,*[data-balloon][data-balloon-pos="right"]:hover:after,*[data-balloon][data-balloon-pos="right"][data-balloon-visible]:before,*[data-balloon][data-balloon-pos="right"][data-balloon-visible]:after{
+  left: 100%;
+}
+
+*[data-balloon][data-balloon-length="small"]:before{
+  width: 73px;  
+  height: auto;
+  white-space: normal;
+}
+*[data-balloon][data-balloon-length="medium"]:before{
+  width: 136px;  
+  height: auto;
+  white-space: normal;
+}
+*[data-balloon][data-balloon-length="large"]:before{
+  width: 235px;  
+  height: auto;
+  white-space: normal;
+}
+*[data-balloon][data-balloon-length="xlarge"]:before{
+  width: 343px;  
+  height: auto;
+  white-space: normal;
+}
+*[data-balloon][data-balloon-length="fit"]:before{
+  width: 100%;  
+  height: auto;
+  white-space: normal;
+}
+button{
+  background-color: #FF3D2E;
+  color: white;
+  padding: .8em 2em;
+  border-radius: 8px;
+}
+
+
+
+
+
+</style>
+<body>
+  <button data-balloon="Whats up!" data-balloon-pos="up">Hover me!</button>
+<button data-balloon="Whats up!" data-balloon-pos="left">Hover me!</button>
+<button data-balloon="Whats up!" data-balloon-pos="right">Hover me!</button>
+<button data-balloon="Whats up!" data-balloon-pos="down">Hover me!</button>
+<hr>
+<button data-balloon-length="small" data-balloon="H Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, praesentium!" data-balloon-pos="up">Hover me!</button>
+<button data-balloon-length="medium" data-balloon="Now that's a super big text we have over here right? Lorem ipsum dolor sit I'm done." data-balloon-pos="up">I'm a medium tooltip.</button>
+<button data-balloon-length="large" data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">I'm a large tooltip</button>
+<button data-balloon-length="xlarge" data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">I'm a Xlarge tooltip</button>
+<button data-balloon-length="fit" data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">My width will fit to element</button>
+<hr>
+<button data-balloon-visible data-balloon="I am always visible!" data-balloon-pos="up">Always visible!</button>
+<button data-balloon="HTML special characters: &#9787; &#9986; &#9820;" data-balloon-pos="up">Hover me!</button>
+<button data-balloon="Emojis: 😀 😬 😁 😂 😃 😄 😅 😆" data-balloon-pos="up">Hover me!</button>
+<button class="font-awesome" data-balloon="Font Awesome: &#xf030; &#xf133; &#xf1fc; &#xf03e; &#xf1f8;" data-balloon-pos="up">Hover me!</button>
+</body>
+</html>
