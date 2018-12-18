@@ -1,0 +1,324 @@
+<script id="ch0101/01" type="helloworld">
+console.log("Hello, World!");
+</script>
+
+
+<script id="ch0101/02" type="not run">
+var acc=prompt("请输入三个由空格分隔的整数");
+var arr=acc.split(' ');
+console.log(+arr[1]);
+</script>
+
+<script  id="ch0101/03" type="align">
+var acc=prompt("请输入三个由空格分隔的整数");
+var arr=acc.split(' ');
+for(i=0;i<arr.length;i++){
+  while(arr[i].length<8){
+    arr[i]=" "+arr[i];
+  }
+}
+result=arr.join(" ");
+console.log(result);
+</script>
+
+<script id="ch0101/04" type="keepfloat">
+var acc=+prompt("请输入");
+var x=acc.toFixed(3);
+console.log(x);
+</script>
+
+<script id="ch0101/05" type="keepfloat">
+var acc=+prompt("请输入");
+var x=acc.toFixed(12);
+console.log(x);
+</script>
+
+<script id="ch0101/06" type="not run">
+var a=prompt("请输入");
+var b=prompt("请输入");
+var c=+prompt("请输入");
+c=c.toFixed(6);
+var d=+prompt("请输入");
+d=d.toFixed(6);
+result=a+' '+b+' '+c+' '+d;
+console.log(result);
+
+</script>
+
+<script type="not run" id="ch0101/08" >
+var x=prompt("请输入");
+var result='  '+x+'  \n '+x+x+x+' \n'+x+x+x+x+x;
+console.log(result);
+</script> 
+<script type="not run" id="ch0101/09" >
+var x=prompt("请输入");
+var result='  '+x+'  \n '+x+x+x+' \n'+x+x+x+x+x+'\n '+x+x+x+' \n  '+x+'  ';
+console.log(result);
+</script>
+
+<script type="not run" id="ch0101/10" >
+ var result="                ********\n               ************\n               ####....#.\n             #..###.....##....\n             ###.......######              ###                 ###           ###           ###\n                ...........               #...#               #...#         #...#         #...#\n               ##*#######                 #.#.#               #.#.#         #.#.#         #.#.#\n            ####*******######             #.#.#               #.#.#         #.#.#         #.#.#\n           ...#***.****.*###....          #...#               #...#         #...#         #...#\n           ....**********##.....           ###                 ###           ###           ###\n           ....****    *****....\n             ####        ####\n           ######        ######\n##############################################################             ##################################\n#...#......#.##...#......#.##...#......#.##------------------#             #...#......#.##------------------#\n###########################################------------------#             ###############------------------#\n#..#....#....##..#....#....##..#....#....#####################             #..#....#....#####################\n##########################################    #----------#                  ##############    #----------#\n#.....#......##.....#......##.....#......#    #----------#                  #.....#......#    #----------#\n##########################################    #----------#                  ##############    #----------#\n#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#                  #.#..#....#..#    #----------#\n##########################################    ############                  ##############    ############"
+console.log(result);
+</script>
+
+<script  type="not run" id="ch0102/07" >
+var x=prompt("请输入");
+console.log(x.charCodeAt(0))
+</script>
+
+<script  type="not run" id="ch0102/08" >
+var x=+prompt("请输入");
+console.log(String.fromCharCode(x));
+</script>
+
+<script  type="not run" id="ch0103/01" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=-arr[0]-arr[1];
+console.log(-result);
+</script>
+
+<script  type="not run" id="ch0103/02" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=(-arr[0]-arr[1])*arr[2];
+console.log(-result);
+</script>
+
+<script  type="not run" id="ch0103/03" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=(-arr[0]-arr[1])/arr[2];
+console.log(-result);
+</script>
+
+<script  type="not run" id="ch0103/04" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result1=Math.floor(arr[0]/arr[1]);
+var result2=arr[0]%arr[1];
+console.log(result1+' '+result2);
+</script>
+
+<script  type="not run" id="ch0103/05" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=arr[0]/arr[1];
+console.log(result.toFixed(9));
+</script>
+
+<script  type="not run" id="ch0103/06" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=arr[1]/arr[0];
+console.log(result.toFixed(5)*100+"%");
+</script>
+
+<script  type="not run" id="ch0103/07" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=arr[1]*arr[0]*arr[0]*arr[0]+arr[2]*arr[0]*arr[0]+arr[3]*arr[0]+arr[4]*1;
+console.log(result.toFixed(7));
+</script>
+
+<script  type="not run" id="ch0103/08" >
+var x=+prompt("请输入");
+var result=5*(x-32)/9;
+console.log(result.toFixed(5));
+</script>
+
+<script  type="not run" id="ch0103/09" >
+var x=+prompt("请输入");
+var pai=3.14159;
+var a=(2*x).toFixed(4);
+var b=(2*x*pai).toFixed(4);
+var c=(pai*x*x).toFixed(4);
+console.log(a+' '+b+' '+c);
+</script>
+
+<script  type="not run" id="ch0103/10" >
+var x=+prompt("请输入");
+var arr=x.split(" ");
+var result=1/(1/arr[0]+1/arr[1]);
+console.log(result.toFixed(2));
+</script>
+
+<script  type="not run" id="ch0103/11" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=arr[0]%arr[1];
+console.log(result.toFixed(4));
+</script>
+
+<script  type="not run" id="ch0103/12" >
+var x=+prompt("请输入");
+var result=x*x*x*4/3*3.14;
+console.log(result.toFixed(2));
+</script>
+
+<script  type="not run" id="ch0103/13" >
+var x=+prompt("请输入");
+var a=Math.floor(x/100);
+var b=Math.floor((x-a*100)/10);
+var c=x-a*100-b*10;
+console.log(String(c)+b+a);
+</script>
+
+<script  type="not run" id="ch0103/14" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var v=arr[1]*arr[1]*arr[0]*3.14159;
+var result= Math.floor(20*1000/v)+1;
+console.log(result);
+</script>
+
+<script  type="not run" id="ch0103/15" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=Math.floor(arr[0]-arr[2]/arr[1]);
+console.log(result);
+</script>
+
+<script  type="not run" id="ch0103/16" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var y=prompt("请输入");
+var brr=y.split(" ");
+var result=Math.sqrt((arr[1]-brr[1])*(arr[1]-brr[1])+(arr[0]-brr[0])*(arr[0]-brr[0]));
+console.log(result.toFixed(3));
+</script>
+
+
+<script  type="not run" id="ch0103/17" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var a=Math.sqrt((arr[2]-arr[0])*(arr[2]-arr[0])+(arr[3]-arr[1])*(arr[3]-arr[1]));
+var b=Math.sqrt((arr[4]-arr[0])*(arr[4]-arr[0])+(arr[5]-arr[1])*(arr[5]-arr[1]));
+var c=Math.sqrt((arr[4]-arr[2])*(arr[4]-arr[2])+(arr[5]-arr[3])*(arr[5]-arr[3]));
+var p=(a+b+c)/2;
+var result=(Math.sqrt(p*(p-a)*(p-b)*(p-c)));
+console.log(result.toFixed(2));
+</script>
+
+
+<script  type="not run" id="ch0103/18" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var s=arr[1]-arr[0];
+var result=Number(arr[0])+s*(arr[2]-1);
+console.log(result);
+</script>
+
+<script  type="not run" id="ch0103/19" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=arr[0]*arr[1];
+console.log(result);
+</script>
+
+<script  type="not run" id="ch0103/20" >
+var x=+prompt("请输入");
+var result=1;
+for(i=0;i<x;i++){
+result*=2;
+}
+console.log(result);
+</script>
+
+
+<script  type="not run" id="ch0104/01" >
+var x=+prompt("请输入");
+if(x>0) console.log("positive");
+else if(x==0) console.log("zero");
+else console.log("negative");
+</script>
+
+
+<script  type="not run" id="ch0104/02" >
+var x=+prompt("请输入");
+if(x<0) x=-x;
+console.log(x.toFixed(2));
+</script>
+
+<script  type="not run" id="ch0104/03" >
+var x=+prompt("请输入");
+if(x%2==0) console.log("even");
+else console.log("odd");
+</script>
+
+
+<script  type="not run" id="ch0104/04" >
+var x=prompt("请输入");
+if(x.charCodeAt(0)%2==0) console.log("even");
+else if(x.charCodeAt(0)%2==1)console.log("odd");
+</script>
+
+
+<script  type="not run" id="ch0104/05" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+if(arr[0]>arr[1]) console.log(">");
+else if(arr[0]==arr[1]) console.log(">");
+else console.log("<");
+</script>
+
+
+<script  type="not run" id="ch0104/06" >
+var x=+prompt("请输入");
+if(x>=10&&x<100) console.log("1");
+else console.log("0";)
+</script>
+
+
+<script  type="not run" id="ch0104/07" >
+var x=+prompt("请输入");
+var arr=x.split(" ");
+if(arr[0]>=10||arr[0]>=20) console.log("1");
+else console.log(0);
+</script>
+
+<script  type="not run" id="ch0104/08" >
+var x=+prompt("请输入");
+if(x%3==0&&x%5==0) console.log("YES")
+else console.log("NO");
+</script>
+
+
+<script  type="not run" id="ch0104/09" >
+var x=+prompt("请输入");
+var arr=[];
+if(x%3==0) arr.push("3");
+if(x%5==0) arr.push("5");
+if(x%7==0) arr.push("7");
+if(arr.length) console.log(arr.join(" "));
+else console.log("n");
+</script>
+
+
+<script  type="not run" id="ch0104/10" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+if(Number(arr[0]<60)+Number(arr[1]<60)===1) console.log(1);
+else console.log(0);
+</script>
+
+
+<script  type="not run" id="ch0104/11" >
+var x=+prompt("请输入");
+if(x==1||x==3||x==5) console.log("NO");
+else console.log("YES");
+</script>
+
+
+<script  type="not run" id="ch0104/12" >
+var x=+prompt("请输入");
+var a=x/1.2;
+var b=x/3+23+27;
+if(a>b) console.log("Bike");
+else if(a==b) console.log("All");
+else console.log("Walk");
+</script>
+
+
+<script  type="not run" id="ch0104/12" >
+var x=+prompt("请输入");
