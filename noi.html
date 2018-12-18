@@ -320,5 +320,115 @@ else console.log("Walk");
 </script>
 
 
-<script  type="not run" id="ch0104/12" >
+<script  type="not run" id="ch0104/13" >
 var x=+prompt("请输入");
+var y;
+if(x>=0&&x<5){y=-x+2.5}
+else if(x>=5&&x<10){y=2-1.5(x-3)(x-3)}
+else if(x>=10&&x<20){y=x/2-1.5}
+console.log(y.toFixed(3));
+</script>
+
+
+<script  type="not run" id="ch0104/14" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=0;
+if (arr[1]=="y") result+=5;
+if(arr[0]<1000) result+=8;
+else result+=Math.ceil(arr[0]/500)*4;
+console.log(result);
+</script>
+
+
+<script  type="not run" id="ch0104/15" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=arr[0];
+if (arr[1]>result) result=arr[1];
+if (arr[2]>result) result=arr[2];
+console.log(result);
+</script>
+
+
+<script  type="not run" id="ch0104/16" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var a=+arr[0];
+var b=+arr[1];
+var c=+arr[2];
+if(a>b+c||b>a+c||c>a+b) console.log("yes")
+else console.log("no");
+</script>
+
+
+<script  type="not run" id="ch0104/17" >
+var x=+prompt("请输入");
+if(x%4==0&&x%100!=0||x%400==0) console.log("Y")
+else console.log("N");
+</script>
+
+
+<script  type="not run" id="ch0104/18" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+if(arr[0]>=-1&&arr[0]<=1&&arr[1]>=-1&&arr[1]<=1) console.log("yes")
+else console.log("no");
+</script>
+
+<script  type="not run" id="ch0104/19" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result;
+switch (arr[2]){
+  case "+":
+  console.log(Number(arr[0])+Number(arr[1]));
+  break;
+  case "-":
+  console.log(arr[0]-arr[1]);
+  break;
+  case "/":
+  if(arr[1]==0){
+      console.log("Divided by zero!");
+  }
+  else console.log(arr[0]/arr[1]);
+  break;
+  case "*":
+  console.log(arr[0]*arr[1]);
+  break;
+  default:
+  console.log("Invalid operator!");
+  break;
+}
+</script>
+
+<script  type="not run" id="ch0104/20" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var a=arr[0];
+var b=arr[1];
+var c=arr[2];
+var g=b*b-4*a*c;
+if(g==0){var x1=(-b/(2*a));
+  console.log("x1=x2="+x1)}
+else if(g>0){
+  var x1=((-b+Math.sqrt(g))/(2*a)).toFixed(5);
+  var x2=((-b-Math.sqrt(g))/(2*a)).toFixed(5);
+  console.log("x1="+x1+";x2="+x2);
+}
+else{
+  var x1=( -b / (2*a)).toFixed(5)+"+"+(Math.sqrt(4*a*c-b*b) / (2*a)).toFixed(5)+"i";
+
+  var x2=( -b / (2*a)).toFixed(5)+"-"+(Math.sqrt(4*a*c-b*b) / (2*a)).toFixed(5)+"i";
+
+  console.log("x1="+x1+";x2="+x2);
+}
+
+</script>
+<script  type="not run" id="ch0104/21" >
+var x=prompt("请输入");
+var arr=x.split(" ");
+var result=Math.floor(arr[0]-arr[2]/arr[1]);
+if(result<0) console.log(0);
+else console.log(result);
+</script>
