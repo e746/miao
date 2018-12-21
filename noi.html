@@ -700,7 +700,7 @@ for(i = 1;i<10;i++){
   result += (2*h);
 }
 console.log(result);
-console.log(h/2);
+console.log((h/2).toFixed(7));
 </script>
 
 
@@ -855,6 +855,7 @@ var m =+prompt();
 var n =+prompt();
 var count=0;
 var sw = 0;
+var result="";
 for(i=1;i<=m;i++){
   sw = 0;
   count = 0;
@@ -862,8 +863,13 @@ for(i=1;i<=m;i++){
     if(i%j==0) count++;
   }
   sw+=(count%2);
-  if(sw == 0)console.log(i);
+  if(sw == 0){
+   if(result==="") result+=i;
+   else result= result+","+i
+
+  }
 }
+console.log(result);
 </script>
 
 
@@ -919,7 +925,7 @@ for(i=1;i<=n;i++){
   }
   result+=(1/row);
 }
-console.log(result);
+console.log((result).toFixed(10));
 </script>
 
 
