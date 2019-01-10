@@ -1,0 +1,85 @@
+<script type="text/javascript">
+
+function printTh(content){
+  document.write("<th>"+content+"</th>")
+}
+function printTd(content){
+  document.write("<td>"+content+"</td>")
+}
+function printMonth(content){
+  document.write("<h2>"+content+"月</h2>")
+}
+function printHead(){
+  document.write("<thead>")
+  printTh("日")
+  printTh("一")
+  printTh("二")
+  printTh("三")
+  printTh("四")
+  printTh("五")
+  printTh("六")
+  document.write("</thead>")
+}
+function getFirstDay(year){
+  var start=1;
+  start=start+365*(year-1)+Math.floor((year-1)/4)-Math.floor((year-1)/100)+Math.floor((year-1)/400)
+  start=start%7;
+  return start;
+}
+function getDays(year,month){
+  switch (month){
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+    return 31;
+    break;
+    case 2:if(year%4==0&&year%100!=0||year%400==0) return 29;
+    else return 28;
+    default:return 30
+  }
+}
+function printDay(day=30,start){
+  var data=1;
+  
+  var weeks=Math.ceil(day/7)
+  if(start>0) document.write('<tr><td colspan="'+start+'"></td>')
+  while(data<=day){
+    if(start==0) document.write("<tr>");
+    printTd(data)
+    if(start==6) document.write("</tr>");
+    data++;
+    start==6?start=0:start++
+  }
+  if(start!=6) document.write("</tr>");
+  return start
+}
+function cal(year){
+  var start=getFirstDay(year);
+  var days
+  for(i=1;i<=12;i++){
+  printMonth(i)
+  document.write("<table>")
+  printHead()
+  days=getDays(year,i)
+  start=printDay(days,start)
+  document.write("</table>")
+  }
+}
+</script>
+
+<script type="not run">
+function power(x,n){
+  if(n==1) return x;
+   else if(n%2==1){
+    var row=power(x,(n-1)/2)
+    return row*row*x
+   } else{
+    var row=power(x,n/2)
+    return row*row
+   }
+}
+</script>

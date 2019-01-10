@@ -77,14 +77,26 @@
   for(i=0;i<=400;i++){
     dot(i,120-Math.sin(i/7)*7)
   }
-  for(i=100;i<=160;i+=0.1){
+ /* for(i=100;i<=160;i+=0.1){
     dot(i,250-Math.sqrt(30*30-(130-i)*(130-i)))
     dot(i,250+Math.sqrt(30*30-(130-i)*(130-i)))
   }
   for(i=220;i<=280;i+=0.1){
     dot(130-Math.sqrt(30*30-(250-i)*(250-i)),i)
     dot(130+Math.sqrt(30*30-(250-i)*(250-i)),i)
+  }*/
+  var pai=Math.PI 
+  for(i=0;i<2*pai;i+=0.01){
+   dot(30*Math.cos(i)+50,30*Math.sin(i)+100,"black")
   }
+  for(i=220;i<=280;i+=1){
+  var cc=Math.sqrt(30*30-(250-i)*(250-i))
+    for(j=0;j<cc;j++){
+      dot(130-j,i)
+      dot(130+j,i)
+    }
+  }
+
   for(m=350;m<=380;m++){
  ;
     for(n=200;n<=230;n++){
