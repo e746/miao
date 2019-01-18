@@ -7,23 +7,59 @@ var e746 = function(){
     }
     return str
   }
+  
+  function fill(array,value,start=0,end=array.length){
+    for(let i=start;i<end;i++){
+      array[i]=value;
+    }
+  }
+ 
+ function flattenDeep(array){
+    function deep(ary,deepAry){
+      for(let i=0;i<deepAry.length;i++){
+        if(Array.isArray(deepAry[i])) deep(ary,deepAry[i])
+            else ary.push(deepAry[i])
+          }
+    }
+  var arr=[];
+  deep(arr,array);
+   return arr
+ }
+ function flattenDepth(array,depth=1){
+    function deep(ary,deepAry,depth){
+      if(depth<1) ary.push(deepAry)
+      else { for(let i=0;i<deepAry.length;i++){
+             if(Array.isArray(deepAry[i])) deep(ary,deepAry[i],depth-1)
+                 else ary.push(deepAry[i])
+             }
+      }
+    }
+  var arr=[];
+  deep(arr,array,depth);
+   return arr
+ }
 
+function mapValues(obj,mapper){
+  var result={}
+  for(var name in obj){
+    result[name]=mapper(obj(name))
+  }
+  return result
+}
+
+function fromPairs(pairs){
+  var obj={};
+  for(i=0;i<pairs.length;i++){
+    obj[pairs[i][0]]=pairs[i][1]
+    
+  }
+  return obj;
+}
   return {
      join: join,
+     fill: fill,
+     flattenDeep: flattenDeep,
+     flattenDepth: flattenDepth,
   } 
 }()
 
-var chenximan = function(){
-
-    function chunk(ary, size = 1) {
-  
-    }
-    function compact(ary) {
-  
-    }
-  
-    return {
-      chunk: chunk,
-      compact: compact,
-    }
-  }()

@@ -1,0 +1,58 @@
+<script>
+function arrayToList(arr){
+  var b;
+  for(i=0;i<arr.length;i++){
+    b={};
+    b.value=arr[i];
+    b.next={}
+  }
+}
+function arrayToList2(arr){
+  if(arr.length>0){
+    var b={value:arr.shift(),
+    next:arrayToList2(arr)}
+  }
+  if(b) return b
+    else return null
+}
+function prepend(val,head){
+  
+}
+function reverseList(head){
+  
+}
+function selectSort(ary){
+  function sw(ary,a,b){
+    t=ary[a];
+    ary[a]=ary[b];
+    ary[b]=t;
+  }
+  for(i=1;i<ary.length;i++){
+    for(j=i;j<ary.length;j++){
+      
+    }
+  }
+  return ary
+}
+[1,2,3,4,5,6,7].reduce(item =>item%2==1?arr.push(item):,arr=[])
+
+return 
+function ary2tree(ary,rootPos =0)
+{  if(ary[rootPos]==null) return null
+   var b={"val":ary[rootPos],
+   left:ary2tree(ary,(rootPos+1)*2-1),
+   right:ary2tree(ary,(rootPos+1)*2)}
+   return b
+}
+function tree2ary(root,rootPos =0)
+{  
+ var arr=[]
+ function treeary(root,rootPos =0){
+  arr[rootPos]=root.val
+  if(root.left) treeary(root.left,rootPos*2+1)
+  if(root.right) treeary(root.right,rootPos*2+2)
+}
+treeary(root,rootPos)
+  return arr
+}
+</script>

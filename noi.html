@@ -1526,6 +1526,28 @@ while(crr[0]==0){
   crr.shift()
 }
 console.log(crr.join(""));
+
+function addHigh(arr,brr){
+arr.unshift(0);
+brr.unshift(0);
+var crr=[];
+var add;
+var addr=0;
+for(i=0;i<arr.length&&i<brr.length;i++){
+  add=Number(arr[arr.length-1-i])+Number(brr[brr.length-1-i])+addr;
+  if(add>=10){
+    crr.unshift(add-10);
+    addr=1
+  }else{
+    crr.unshift(add);
+    addr=0
+  }
+}
+while(crr[0]==0){
+  crr.shift()
+}
+return (crr.join(""));
+}
 </script>
 
 
@@ -1653,4 +1675,46 @@ var c;
   }
 }
 console.log(abd())
+</script>
+
+<script type="not run">
+function input(n){
+  if
+  if(n>1){var x=prompt()
+    input(n-1)
+    console.log(x)
+  }
+
+}
+</script>
+<script>
+var plusOne = function(digits) {
+   
+    var i=0;
+  do{ if(i!=0) digits[digits.length-i]=0;
+      digits[digits.length-1-i]+=1;
+      i++;
+    }while(digits[digits.length-i]==10);
+if(digits[0]===0) digits.unshift(0)
+    return digits
+};
+</script>
+<script>
+function reverse(ary){
+  var a=ary.pop();
+  return reverse(ary).push(a)
+}
+function max(){
+  
+}
+function maxMoneyFrom(x,y){
+ if(maxMoneyFrom(X+1))
+}
+function maxSubArray(ary){
+  var max=0
+  var result=0
+  function mmm(start,end){
+    return Math.max(mmm(start,Math.floor((start+end)/2)))
+  }
+}
 </script>
