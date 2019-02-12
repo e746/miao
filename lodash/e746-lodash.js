@@ -12,6 +12,7 @@ var e746 = function(){
     for(let i=start;i<end;i++){
       array[i]=value;
     }
+    return array
   }
  
  function flattenDeep(array){
@@ -27,7 +28,7 @@ var e746 = function(){
  }
  function flattenDepth(array,depth=1){
     function deep(ary,deepAry,depth){
-      if(depth<1) ary.push(deepAry)
+      if(depth<0) ary.push(deepAry)
       else { for(let i=0;i<deepAry.length;i++){
              if(Array.isArray(deepAry[i])) deep(ary,deepAry[i],depth-1)
                  else ary.push(deepAry[i])
@@ -60,6 +61,8 @@ function fromPairs(pairs){
      fill: fill,
      flattenDeep: flattenDeep,
      flattenDepth: flattenDepth,
+     mapValues:mapValues,
+     fromPairs,fromPairs,
   } 
 }()
 

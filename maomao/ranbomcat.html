@@ -1,0 +1,86 @@
+<style type="text/css">
+img{
+  position: absolute;
+  xfilter:sepia(70%) hue-rotate(50%) blur(2px);
+  
+}
+.pic{
+  position:relative;
+  width: 400px;
+  height: 450px;
+}
+</style>
+<script type="text/javascript">
+//该函数打印图层并加上ID
+function pngPrint(name){
+  var x=""
+  x+=`<img src ="`
+  x+=name
+  x+=`.png" id="`+name+`_pic">`
+  document.write(x)
+  
+}
+//把滑动条数据实时加到对象里，然后再改变对应部位的滤镜属性
+function colChange(a)
+{ var arr=a.getAttribute("id").split("_")
+  var id=arr[0]+"_pic"
+   obj[arr[0]][arr[1]]=a.value;
+   var str="saturate("
+   str+=obj[arr[0]].saturate
+   str+="%) hue-rotate("
+   str+=obj[arr[0]]["hue-rotate"]
+   str+="deg)"
+  document.getElementById(id).style.filter=str
+}
+//打印属性的滑动条，确定滑动条数据
+function selectPrint(name){
+  document.write("<div>"+name+"</div>")
+  document.write('<input type="range" min="0" max="200" value="100" id="'+name+'_saturate" oninput="colChange(this)" onchange="colChange(this)"> ')
+  document.write('<input type="range" min="-180" max="180" value="0" id="'+name+'_hue-rotate"  oninput="colChange(this)" onchange="colChange(this)"> ')
+}
+function printZu(){
+  document.write("<div class ='pic'>")
+  for (var i = 0; i < arguments.length; i++) {
+    pngPrint(arguments[i]) //画图层
+  }
+  document.write("</div>")
+  var obj={}
+  for (var i = 0; i < arguments.length; i++) {
+    if(arguments[i]=="kao") continue;//**********************************除外了脸属性
+    selectPrint(arguments[i]) //画滑动条并绑定事件,把对应属性添加到对象里
+    //滤镜属性
+    obj[arguments[i]]={
+      saturate:100,
+      "hue-rotate":0,
+    }
+  }
+  return obj
+}
+function ramdomColchange(name){
+
+  var row=Number(document.getElementById(name).value)
+    if(row<180){row+=20*Math.random()}
+      else row=-180;
+    document.getElementById(name).value=row;
+}
+function kirakira(a){
+  a.disabled=true
+  ranbomOn=setInterval(
+  function(){
+    for(name in obj){
+      ramdomColchange(name+"_hue-rotate")
+      colChange(document.getElementById(name+"_hue-rotate"))
+      ramdomColchange(name+"_saturate")
+      colChange(document.getElementById(name+"_saturate"))
+    }
+  },300)
+}
+function stopkirakira(){
+clearInterval(ranbomOn);
+document.getElementById("kirabtn").disabled=false;
+}
+//创建参数对象
+var obj=printZu("kao","kami","meleft","meright","mimi")
+document.write("</br><button id='kirabtn' onclick='kirakira(this)'>霓虹猫(重复点后果自负）</button>")
+document.write("</br><button onclick='stopkirakira()'>停</button>")
+</script>
